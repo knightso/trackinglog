@@ -171,7 +171,7 @@ func queryTrackingLogs(gojic web.C, w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	q := datastore.NewQuery(KIND_TRACKING_LOG).Filter("UserAgent =", ua.UserAgent).Order("-CreatedAt")
+	q := datastore.NewQuery(KIND_TRACKING_LOG).Filter("UserAgent =", ua.UserAgent).Order("-CreatedAt").Limit(500)
 
 	var logs []*TrackingLog
 	if err := ds.ExecuteQuery(c, q, &logs); err != nil {
