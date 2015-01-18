@@ -1,4 +1,4 @@
-application: trackinglog
+application: traclogs
 version: 20150118-01
 runtime: go
 api_version: go1
