@@ -18,7 +18,7 @@ const KIND_TRACKING_LOG = "TrackingLog"
 
 func init() {
 	http.Handle("/", goji.DefaultMux)
-	goji.Get("/tracking/", saveTracking)
+	goji.Get("/tracking/*", saveTracking)
 	goji.Get("/api/useragents", queryUserAgents)
 	goji.Get("/api/useragents/:key", getUserAgent)
 	goji.Get("/api/useragents/:key/trackinglogs", queryTrackingLogs)
