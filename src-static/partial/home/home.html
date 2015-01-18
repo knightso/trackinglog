@@ -1,0 +1,22 @@
+<div class="col-md-12" ng-controller="HomeCtrl">
+
+  <h1>User Agents</h1>
+
+  <table border="1">
+    <thead>
+    <tr>
+      <th></th>
+      <th>User Agent</th>
+      <th>Updated At</th>
+    </tr>
+    </thead>
+    <tr ng-repeat="ua in userAgents track by ua.key">
+      <td><a ui-sref="ua({uaKey: ua.key})">logs</a></td>
+      <td>{{ua.userAgent}}</td>
+      <td>{{ua.updatedAt | date:'yyyy/MM/dd HH:mm:ss.sss'}}</td>
+    </tr>
+    <tbody>
+    </tbody>
+  </table>
+
+</div>
